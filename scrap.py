@@ -14,11 +14,14 @@ driver = webdriver.Chrome(options=chrome_options)
 data=[]
 for i in range(len(users)):
     driver.get("https://codeforces.com/profile/"+users[i])
-    content = driver.find_element(By.CSS_SELECTOR, 'div._UserActivityFrame_counterValue')
-    dat = content.text
-    l = len(dat)
-    num = int(dat[0:(l-8)])
-    data.append({'solved':num, 'profile':users[i]})
+    try:
+        content = driver.find_element(By.CSS_SELECTOR, 'div._UserActivityFrame_counterValue')
+        dat = content.text
+        l = len(dat)
+        num = int(dat[0:(l-8)])
+        data.append({'solved':num, 'profile':users[i]})
+    except:
+        print("[-] User "+users[i]+" caused error, skipping...\n")
 
 driver.close()
 # Sorting the users by number of questions solved
