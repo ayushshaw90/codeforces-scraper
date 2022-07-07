@@ -4,6 +4,7 @@ The output is in the form of an questions_solved.xlsx file
 
 ## Installation instructions
 Prerequisites: python3 and pip3 are needed.
+Keep the proper chrome driver. 
 
 ### Install dependencies:
 pip install -r requirements.txt
