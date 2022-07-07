@@ -1,3 +1,4 @@
-requests=2.27.1
-selenium=4.2.0
-python-codeforces=0.2.7
+requests==2.27.1
+selenium==4.2.0
+python-codeforces==0.2.7
+openpyxl==3.0.10
